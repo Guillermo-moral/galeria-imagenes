@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gelion';
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galeria {
+  width: 500px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.galeria a {
+  display: block;
+}
+
+.galeria img {
+  display: block;
+  width: 100%;
+  filter: grayscale(90%);
+  transition: filter 0.6s;
+}
+
+.galeria a:hover img {
+  filter: grayscale(0);
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+.visible {
+  display: flex;
+  animation: fade 0.4s 0.2s;
+  /* le indica al elemento como va a quedar cuando no se este ejecutando la animacion, tanto antes como despues */
+  animation-fill-mode: both; /* tiene el valor de inicio de la animacion y una vez que la animacion termina, se queda con el valor final */
+}
+/* Usar con timeout */
+/* .animacion {
+  opacity: 0;
+  /* Iniciamos en opacidad 0, para que espere oculto hasta que pase el delay de 0.2s 
+  animation: fade 0.4s 0.2s;
+} */
+.modal a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 4em;
+  margin: 0 20px;
+}
+
+.modal img {
+  width: 500px;
+  display: block;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
